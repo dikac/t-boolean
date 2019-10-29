@@ -1,2 +1,2 @@
 # t-boolean
-Typescript boolean
+typescript boolean
