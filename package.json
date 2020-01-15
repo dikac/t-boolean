@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-boolean",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Typescript boolean",
   "dependencies": {
     "utility-types": "^3.10.0"
@@ -10,7 +10,7 @@
     "typescript": "^3.7.4",
     "@types/jasmine": "^3.5.0",
     "npm-run-all": "^4.1.5",
-    "pjson-private-remover": "^0.1.0",
+    "json-properties-remover": "^0.1.2",
     "jasmine": "^3.4.0",
     "move-cli": "^1.2.1",
     "cpy-cli": "^3.0.0",
@@ -25,7 +25,7 @@
     "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "release": "remove-private-field dist/package.json",
+    "release": "remove-json-properties dist/package.json private",
     "postrelease": "npm publish dist",
     "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore"
