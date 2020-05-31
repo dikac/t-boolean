@@ -10,12 +10,18 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const type_1 = require("./type");
-    function Guard(value, error = (value) => new Error('type expect boolean, given ' + value)) {
+    /**
+     * Throw exception if given value is no boolean type
+     */
+    function Guard(value, errorFactory = defaultFactory) {
         if (type_1.default(value)) {
             return value;
         }
-        throw error(value);
+        throw errorFactory(value);
     }
     exports.default = Guard;
+    function defaultFactory(value) {
+        return new Error('type expect boolean, given ' + value);
+    }
 });
 //# sourceMappingURL=guard.js.map

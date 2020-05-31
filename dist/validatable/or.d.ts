@@ -1,0 +1,6 @@
+import Validatable from "./validatable";
+export default class Or<Arguments extends Validatable[]> implements Readonly<Validatable> {
+    validatables: Arguments;
+    constructor(validatables: Arguments);
+    get valid(): boolean;
+}

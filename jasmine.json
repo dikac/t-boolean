@@ -2,10 +2,8 @@
 
   "spec_dir": "dist-spec",
 
-
   "spec_files": [
-    "**/*.spec.js",
-    "!**/entity"
+    "**/*.spec.js"
   ],
 
 

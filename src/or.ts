@@ -1,3 +1,4 @@
+import Type from "./type";
 
 type Validator<V extends any[]> = {
     [P in keyof V]:  (value : any) => value is V[P]
@@ -24,4 +25,5 @@ export default function Or<V extends any[]>(value : any, ...validators : Validat
 
     return valids.length === 0;
 }
+
 

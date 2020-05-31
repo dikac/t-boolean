@@ -1,8 +1,11 @@
 import Type from "./type";
 
+/**
+ * Throw exception if given value is no boolean type
+ */
 export default function Guard(
     value : any,
-    error : (value: any) => Error = (value: any) => new Error('type expect boolean, given ' + value)
+    errorFactory : (value: any) => Error = defaultFactory
     ) : boolean {
 
     if(Type(value)) {
@@ -10,5 +13,10 @@ export default function Guard(
         return value;
     }
 
-    throw error(value);
+    throw errorFactory(value);
+}
+
+function defaultFactory(value: any) {
+
+    return new Error('type expect boolean, given ' + value)
 }

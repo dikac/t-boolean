@@ -9,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if given value type is boolean
+     */
     function Type(value) {
         return value === true || value === false;
     }
