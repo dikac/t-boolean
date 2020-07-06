@@ -4,6 +4,7 @@
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
+    "@dikac/t-function": "git+file:///b:/t-function",
     "@dikac/t-message": "^0.4.0",
     "@dikac/t-object": "^0.16.1",
     "@dikac/t-value": "^0.6.0",

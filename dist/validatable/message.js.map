@@ -1,1 +1,0 @@
-{"version":3,"file":"message.js","sourceRoot":"","sources":["../../src/validatable/message.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA,uCAAgC;IAEhC;;OAEG;IACH,MAAqB,OAA2C,SAAQ,iBAAU;QAE9E,YACI,WAAe,EACR,gBAAuC;YAG9C,KAAK,CAAC,WAAW,CAAC,CAAC;YAHZ,qBAAgB,GAAhB,gBAAgB,CAAuB;QAIlD,CAAC;QAED,IAAI,OAAO;YAEP,OAAO,IAAI,CAAC,gBAAgB,CAAC,OAAO,CAAC;QACzC,CAAC;KAEJ;IAfD,0BAeC"}

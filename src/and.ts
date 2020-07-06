@@ -1,4 +1,4 @@
-import {Optional, UnionToIntersection} from "utility-types";
+import {UnionToIntersection} from "utility-types";
 
 type Validator<V extends any[]> = {
     [P in keyof V]:  (value : any) => value is V[P]

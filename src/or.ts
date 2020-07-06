@@ -1,5 +1,3 @@
-import Type from "./type";
-
 type Validator<V extends any[]> = {
     [P in keyof V]:  (value : any) => value is V[P]
 }
