@@ -1,4 +1,3 @@
-import Function from "@dikac/t-function/function";
-export default interface Type<Argument, ValidType extends Argument> {
-    validation: Function<[Argument], ValidType>;
+export default interface Type<Argument, ValidType extends Argument, Arguments extends any[] = []> {
+    validation: (value: Argument, ...extras: Arguments) => value is ValidType;
 }

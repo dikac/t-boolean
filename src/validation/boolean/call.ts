@@ -3,11 +3,10 @@ import Argument from "@dikac/t-function/argument/argument";
 
 
 export default function Call<
-    Arg
+    Arg extends any[]
 >(
-    object : Validation<Arg> & Argument<[Arg]>
+    object : Validation<Arg> & Argument<Arg>
 ) : boolean {
 
-    return  object.validation(object.argument[0]);
-
+    return  object.validation(...object.argument);
 }

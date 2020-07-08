@@ -1,6 +1,6 @@
 import Function from "@dikac/t-function/function";
 
-export default interface Validation<Argument> {
+export default interface Validation<Arguments extends any[]> {
 
-    validation : Function<[Argument], boolean>;
+    validation : Function<Arguments, boolean>;
 }

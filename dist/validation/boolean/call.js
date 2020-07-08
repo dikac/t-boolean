@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function Call(object) {
-        return object.validation(object.argument[0]);
+        return object.validation(...object.argument);
     }
     exports.default = Call;
 });
