@@ -9,15 +9,13 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Or(value, ...validators) {
-        let valids = [];
+    function Or(value, validators) {
         for (let validator of validators) {
-            valids.push(validator(value));
-            if (valids.includes(true)) {
+            if (validator(value)) {
                 return true;
             }
         }
-        return valids.length === 0;
+        return false;
     }
     exports.default = Or;
 });

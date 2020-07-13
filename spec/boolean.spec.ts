@@ -1,4 +1,4 @@
-import Type from "../../dist/guard/boolean";
+import Type from "../dist/boolean";
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 

@@ -7,21 +7,17 @@ type Validator<V extends any[]> = {
  */
 type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V } ? V : never;
 
-export default function Or<V extends any[]>(value : any, ...validators : Validator<V>) : value is TupleTypes<V> {
-
-    let valids : boolean[] = [];
+export default function Or<V extends any[]>(value : any, validators : Validator<V>) : value is TupleTypes<V> {
 
     for(let validator of validators) {
 
-        valids.push(validator(value));
-
-        if(valids.includes(true)) {
+        if(validator(value)) {
 
             return true;
         }
     }
 
-    return valids.length === 0;
+    return false;
 }
 
 

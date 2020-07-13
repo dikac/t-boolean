@@ -9,7 +9,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function And(value, ...validators) {
+    function And(value, validators) {
         for (let validator of validators) {
             if (!validator(value)) {
                 return false;

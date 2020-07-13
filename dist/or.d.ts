@@ -9,5 +9,5 @@ declare type TupleTypes<T> = {
 } extends {
     [key: number]: infer V;
 } ? V : never;
-export default function Or<V extends any[]>(value: any, ...validators: Validator<V>): value is TupleTypes<V>;
+export default function Or<V extends any[]>(value: any, validators: Validator<V>): value is TupleTypes<V>;
 export {};

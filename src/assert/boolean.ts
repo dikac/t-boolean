@@ -1,6 +1,6 @@
 import ThrowableType from "../throwable/type";
 import Callback from "@dikac/t-function/assert/callback";
-import BooleanType from "../guard/boolean";
+import BooleanType from "../boolean";
 
 /**
  * Throw exception if given value is no boolean type
