@@ -1,44 +1,43 @@
-import Guard from "../../dist/ensure/boolean";
+import Type from "../../dist/guard/boolean";
 it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 
-function throws (message : string, callback : () => any) {
+describe("compiler compatible", function() {
 
-    try {
+    let value : unknown = true;
 
-        callback();
-        fail(message);
+    if(Type(value)) {
 
-    } catch (e) {
+        let result : boolean = value;
 
-        it(message, () => {
-            expect(e).toBeInstanceOf(Error);
-        });
+    } else {
+
+        // @ts-expect-error
+        let result : boolean = value;
     }
 
-}
-
+});
 
 describe("boolean", function() {
 
     it(`true`, () => {
-        expect(Guard(true)).toBeTrue();
+        expect(Type(true)).toBeTrue();
     });
 
     it(`false`, () => {
-        expect(Guard(false)).toBeFalse();
+        expect(Type(false)).toBeTrue();
     });
 
 });
 
 describe("string", function() {
 
-    throws(`primitive`, ()=>{
-        Guard('str');
+    it(`primitive`, () => {
+        expect(Type('str')).toBeFalse();
     });
 
-    throws(`primitive`, ()=>{
-        Guard(new String('str'));
+    it(`object`, () => {
+        expect(Type(new String('str'))).toBeFalse();
     });
 
 });
@@ -46,52 +45,52 @@ describe("string", function() {
 
 describe("number", function() {
 
-    throws(`primitive`, () => {
-        Guard(1);
+    it(`primitive`, () => {
+        expect(Type(1)).toBeFalse();
     });
 
-    throws(`nan`, () => {
-        Guard(NaN);
+    it(`nan`, () => {
+        expect(Type(NaN)).toBeFalse();
     });
 
 });
 
 describe("object", function() {
 
-    throws(`plain`, () => {
-        Guard({});
+    it(`plain`, () => {
+        expect(Type({})).toBeFalse();
     });
 
-    throws(`instance`, () => {
-        Guard(new Map());
+    it(`instance`, () => {
+        expect(Type(new Map())).toBeFalse();
     });
 
 });
 
 describe("function", function() {
 
-    throws(`anonymous `, () => {
-        Guard(function () {});
+    it(`anonymous `, () => {
+        expect(Type(function () {})).toBeFalse();
     });
 
-    throws(`anonymous arrow`, () => {
-        Guard(()=>{});
+    it(`anonymous arrow`, () => {
+        expect(Type(()=>{})).toBeFalse();
     });
 
-    throws(`named`, () => {
-        Guard(isNaN);
+    it(`named`, () => {
+        expect(Type(isNaN)).toBeFalse();
     });
 
 });
 
 describe("empty", function() {
 
-    throws(`null `, () => {
-        Guard(null);
+    it(`null `, () => {
+        expect(Type(null)).toBeFalse();
     });
 
-    throws(`undefined`, () => {
-        Guard(undefined);
+    it(`undefined`, () => {
+        expect(Type(undefined)).toBeFalse();
     });
 
 });
