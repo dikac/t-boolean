@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-boolean",
-  "version": "0.6.2",
+  "version": "0.6.4",
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-function": "^0.4.2",
+    "@dikac/t-function": "^0.5.0",
     "ts-toolbelt": "^6.12.2"
   },
   "devDependencies": {
