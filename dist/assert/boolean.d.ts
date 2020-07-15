@@ -1,4 +1,5 @@
+import Function from "@dikac/t-function/function";
 /**
  * Throw exception if given value is no boolean type
  */
-export default function Boolean(value: any, error?: (value: any) => Error): asserts value is boolean;
+export default function Boolean(value: unknown, error?: Function<[unknown], Error>): asserts value is boolean;

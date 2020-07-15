@@ -4,14 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "../string/boolean"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Type(value) {
-        return new Error(`type expect boolean, given ${value}`);
+    const boolean_1 = require("../string/boolean");
+    function Boolean(value) {
+        return new Error(boolean_1.default(false, value));
     }
-    exports.default = Type;
+    exports.default = Boolean;
 });
-//# sourceMappingURL=type.js.map
+//# sourceMappingURL=boolean.js.map

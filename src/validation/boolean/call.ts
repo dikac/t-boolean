@@ -3,7 +3,7 @@ import Argument from "@dikac/t-function/argument/argument";
 
 
 export default function Call<
-    Arg extends any[]
+    Arg extends unknown[]
 >(
     object : Validation<Arg> & Argument<Arg>
 ) : boolean {

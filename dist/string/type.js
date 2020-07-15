@@ -9,12 +9,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Type(valid, type) {
+    function Type(valid, subject, type) {
         if (valid) {
-            return `value is ${type}`;
+            return `${subject} is "${type}"`;
         }
         else {
-            return `value is not ${type}`;
+            return `${subject} is not "${type}"`;
         }
     }
     exports.default = Type;

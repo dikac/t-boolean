@@ -9,7 +9,7 @@ type Validator<V extends any[]> = {
  */
 type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V } ? V : never;
 
-export default function And<V extends any[]>(value : any, validators : Validator<V>) : value is Union.IntersectOf<TupleTypes<V>> {
+export default function And<V extends unknown[]>(value : unknown, validators : Validator<V>) : value is Union.IntersectOf<TupleTypes<V>> {
 
     for(let validator of validators) {
 

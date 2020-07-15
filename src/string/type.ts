@@ -1,11 +1,11 @@
-export default function Type(valid : boolean, type : string) : string {
+export default function Type(valid : boolean, subject : string, type : string) : string {
 
     if(valid) {
 
-        return `value is ${type}`;
+        return `${subject} is "${type}"`;
 
     } else {
 
-        return `value is not ${type}`;
+        return `${subject} is not "${type}"`;
     }
 }
