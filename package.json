@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-boolean",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-function": "^0.8.0",
+    "@dikac/t-function": "^0.9.0",
     "ts-toolbelt": "^6.13.6"
   },
   "devDependencies": {
@@ -17,17 +17,25 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "jasmine-ts-console-reporter": "^3.1.1",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "ts-cleaner": "^1.0.5"
   },
   "scripts": {
-    "spec-run": "jasmine --reporter=jasmine-ts-console-reporter  --config=./jasmine.json",
+    "spec-run-js": "jasmine --config=./jasmine.json",
+    "spec-run": "jasmine --reporter=jasmine-ts-console-reporter --config=./jasmine.json",
     "spec": "npm-run-all spec-compile spec-run",
-    "spec-compile": "npm-run-all --parallel spec-compile-script ",
-    "spec-compile-watch": "npm-run-all --parallel spec-compile-watch-script",
+    "spec-compile": "npm-run-all spec-compile-script spec-cleanup",
+    "spec-compile-watch": "npm-run-all --parallel spec-compile-watch-script spec-cleanup-watch",
     "spec-compile-script": "tsc -p tsconfig-spec.json",
     "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
-    "compile": "tsc",
-    "compile-watch": "tsc -w",
+    "compile-script": "tsc",
+    "compile": "npm-run-all compile-script cleanup",
+    "cleanup": "ts-cleaner --verbose --dist=dist --src=src",
+    "cleanup-watch": "ts-cleaner --verbose --dist=dist --src=src --watch",
+    "spec-cleanup": "ts-cleaner --verbose --dist=dist-spec --src=spec",
+    "spec-cleanup-watch": "ts-cleaner --verbose --dist=dist-spec --src=spec --watch",
+    "compile-script-watch": "tsc -w",
+    "compile-watch": "npm-run-all --parallel compile-script-watch cleanup-watch",
     "release": "remove-json-properties dist/package.json private scripts.postinstall scripts.deploy dependencies.@dikac/deployer",
     "postrelease": "npm publish dist",
     "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
