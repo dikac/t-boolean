@@ -1,24 +1,24 @@
 {
   "name": "@dikac/t-boolean",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-function": "^0.9.0",
-    "ts-toolbelt": "^6.13.6"
+    "@dikac/t-function": "^0.9.1",
+    "ts-toolbelt": "^6.13.11"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
     "@types/node": "^12.12.50",
     "cpy-cli": "^3.1.1",
     "jasmine": "^3.4.0",
+    "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "move-cli": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "jasmine-ts-console-reporter": "^3.1.1",
-    "typescript": "^3.9.6",
-    "ts-cleaner": "^1.0.5"
+    "ts-cleaner": "^1.0.5",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "spec-run-js": "jasmine --config=./jasmine.json",
