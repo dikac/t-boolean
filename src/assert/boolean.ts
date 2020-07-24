@@ -10,7 +10,7 @@ import Function from "@dikac/t-function/function";
 export default function Boolean(
     value : unknown,
     error : Function<[unknown], Error> = ThrowableType
-    ) : asserts value is boolean {
+) : asserts value is boolean {
 
     Parameter(value, BooleanType, error);
 }
