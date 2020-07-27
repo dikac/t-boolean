@@ -1,11 +1,13 @@
 {
   "name": "@dikac/t-boolean",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-function": "^0.10.1",
-    "ts-toolbelt": "^6.13.28"
+    "@dikac/t-validator": "^0.9.4",
+    "@dikac/t-validatable": "^0.17.4",
+    "ts-toolbelt": "^6.13.34"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
