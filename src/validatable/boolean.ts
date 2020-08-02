@@ -4,13 +4,12 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import Function from "@dikac/t-function/function";
+import Return from "@dikac/t-validator/return/return";
 
-type Return<Msg, Argument> = Readonly<Validatable<false> & Message<Msg> & Value<Argument>> | Readonly<Validatable<true> & Message<Msg> & Value<boolean>>;
-
-export default function Boolean<Msg, Argument>(
+export default function Boolean<MessageT, Argument>(
     value : Argument,
-    message : Function<[Readonly<Value<Argument> & Validatable>], Msg>
-) : Return<Msg, Argument> {
+    message : Function<[Readonly<Value<Argument> & Validatable>], MessageT>
+) : Return<any, Argument, boolean, Readonly<Validatable & Message<MessageT> & Value<any>>> {
 
-    return <Return<Msg, Argument>> Callback(value, NumberGuard, message);
+    return <Return<any, Argument, boolean, Readonly<Validatable & Message<MessageT> & Value<any>>>> Callback(value, NumberGuard, message);
 }
