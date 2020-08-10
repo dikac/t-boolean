@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-value/message/callback", "../boolean"], factory);
+        define(["require", "exports", "@dikac/t-validator/validatable/callback", "../boolean"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const callback_1 = require("@dikac/t-value/message/callback");
+    const callback_1 = require("@dikac/t-validator/validatable/callback");
     const boolean_1 = require("../boolean");
     function Boolean(value, message) {
         return callback_1.default(value, boolean_1.default, message);
