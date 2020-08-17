@@ -1,13 +1,7 @@
-type Validator<V extends any[]> = {
-    [P in keyof V]:  (value : any) => value is V[P]
-}
+import {Validator} from "./and";
+import {List} from "ts-toolbelt";
 
-/**
- * taken from https://stackoverflow.com/a/51603499/1404654
- */
-type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V } ? V : never;
-
-export default function Or<V extends unknown[]>(value : unknown, validators : Validator<V>) : value is TupleTypes<V> {
+export default function Or<V extends unknown[]>(value : unknown, validators : Validator<V>) : value is List.UnionOf<V> {
 
     for(let validator of validators) {
 

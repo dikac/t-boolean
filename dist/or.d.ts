@@ -1,13 +1,3 @@
-declare type Validator<V extends any[]> = {
-    [P in keyof V]: (value: any) => value is V[P];
-};
-/**
- * taken from https://stackoverflow.com/a/51603499/1404654
- */
-declare type TupleTypes<T> = {
-    [P in keyof T]: T[P];
-} extends {
-    [key: number]: infer V;
-} ? V : never;
-export default function Or<V extends unknown[]>(value: unknown, validators: Validator<V>): value is TupleTypes<V>;
-export {};
+import { Validator } from "./and";
+import { List } from "ts-toolbelt";
+export default function Or<V extends unknown[]>(value: unknown, validators: Validator<V>): value is List.UnionOf<V>;

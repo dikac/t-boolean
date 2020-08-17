@@ -1,15 +1,19 @@
-import {Union} from "ts-toolbelt";
+import {Union, List} from "ts-toolbelt";
 
-type Validator<V extends any[]> = {
-    [P in keyof V]:  (value : any) => value is V[P]
+/**
+ * callback mapping
+ */
+export type Validator<Values extends any[]> = {
+    [Key in keyof Values]:  (value : any) => value is Values[Key]
 }
 
 /**
- * taken from https://stackoverflow.com/a/51603499/1404654
+ *
+ * @param value
+ * @param validators
+ * @constructor
  */
-type TupleTypes<T> = { [P in keyof T]: T[P] } extends { [key: number]: infer V } ? V : never;
-
-export default function And<V extends unknown[]>(value : unknown, validators : Validator<V>) : value is Union.IntersectOf<TupleTypes<V>> {
+export default function And<V extends unknown[]>(value : unknown, validators : Validator<V>) : value is Union.IntersectOf<List.UnionOf<V>> {
 
     for(let validator of validators) {
 

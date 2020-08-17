@@ -9,6 +9,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     *
+     * @param value
+     * @param validators
+     * @constructor
+     */
     function And(value, validators) {
         for (let validator of validators) {
             if (!validator(value)) {

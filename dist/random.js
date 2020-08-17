@@ -11,8 +11,6 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
      * non cryptographic boolean random
-     *
-     * @constructor
      */
     function Random() {
         return !(parseInt(Math.random().toString().substr(2, 1)) % 2);
