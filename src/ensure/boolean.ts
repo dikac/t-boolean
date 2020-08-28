@@ -1,6 +1,5 @@
 import ThrowableType from "../throwable/boolean";
 import AssertType from "../assert/boolean";
-import Function from "@dikac/t-function/function";
 
 /**
  * Throw exception if given value is no boolean type
@@ -8,7 +7,7 @@ import Function from "@dikac/t-function/function";
 
 export default function Boolean(
     value : unknown,
-    error : Function<[unknown], Error> = ThrowableType
+    error : (value:unknown)=>Error = ThrowableType
 ) : boolean {
 
     AssertType(value, error)
