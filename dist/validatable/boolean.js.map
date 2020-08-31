@@ -1,1 +1,1 @@
-{"version":3,"file":"boolean.js","sourceRoot":"","sources":["../../src/validatable/boolean.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,sEAA+D;IAC/D,wCAAqC;IAMrC,SAAwB,OAAO,CAC3B,KAAgB,EAChB,OAAgD;QAGhD,OAAuF,kBAAQ,CAAC,KAAK,EAAE,iBAAW,EAAE,OAAO,CAAC,CAAC;IACjI,CAAC;IAND,0BAMC"}
+{"version":3,"file":"boolean.js","sourceRoot":"","sources":["../../src/validatable/boolean.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,wFAAwE;IACxE,wCAAqC;IAMrC,SAAwB,OAAO,CAC3B,KAAgB,EAChB,OAAgD;QAGhD,OAAuF,2BAAQ,CAAC,KAAK,EAAE,iBAAW,EAAE,OAAO,CAAC,CAAC;IACjI,CAAC;IAND,0BAMC"}
