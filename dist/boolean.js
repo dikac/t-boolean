@@ -10,7 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * check if given value type is boolean
+     * check if {@param value} type is boolean
+     *
+     * @param value
      */
     function Boolean(value) {
         return value === true || value === false;

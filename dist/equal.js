@@ -1,6 +1,3 @@
-/**
- * compare {@param value} with {@param compare} useing === comparison
- */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -12,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * compare {@param value} with {@param compare} using === comparison
+     */
     function Equal(value, compare) {
         return value === compare;
     }

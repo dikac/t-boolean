@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../string/boolean"], factory);
+        define(["require", "exports", "../../assert/string/boolean"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const boolean_1 = require("../../string/boolean");
-    function Number(object) {
+    const boolean_1 = require("../../assert/string/boolean");
+    function Boolean(object) {
         return boolean_1.default(object.valid, object.value);
     }
-    exports.default = Number;
+    exports.default = Boolean;
 });
 //# sourceMappingURL=boolean.js.map

@@ -10,7 +10,14 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const boolean_1 = require("../validatable/boolean");
+    /**
+     * {@see Validator} for boolean type
+     */
     class Boolean {
+        /**
+         * @param message
+         * callback for generating value for {@see Message}
+         */
         constructor(message) {
             this.message = message;
         }

@@ -11,6 +11,15 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
     const boolean_1 = require("../boolean");
+    /**
+     * validate if {@param value} is boolean
+     *
+     * @param value
+     * value to be validated
+     *
+     * @param message
+     * for generating message
+     */
     function Boolean(value, message) {
         return callback_function_1.default(value, boolean_1.default, message);
     }

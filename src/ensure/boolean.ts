@@ -1,4 +1,4 @@
-import ThrowableType from "../throwable/boolean";
+import ThrowableType from "../assert/throwable/boolean";
 import AssertType from "../assert/boolean";
 
 /**

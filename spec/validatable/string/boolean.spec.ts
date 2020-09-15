@@ -2,50 +2,26 @@ import Boolean from "../../../dist/validatable/string/boolean";
 
 it("enable console log", () => {spyOn(console, 'log').and.callThrough()});
 
-describe('infinity',() =>{
+describe('true',() =>{
 
-    it(`positive`, () => {
-        expect(Boolean({value:Infinity, valid:true})).toBe('value "Infinity" is boolean');
-        expect(Boolean({value:Infinity, valid:false})).toBe('value "Infinity" is not boolean');
+    it(`valid`, () => {
+        expect(Boolean({value:true, valid:true})).toBe('type is boolean.');
     });
 
-    it(`boolean`, () => {
-        expect(Boolean({value:-Infinity, valid:true})).toBe('value "-Infinity" is boolean');
-        expect(Boolean({value:-Infinity, valid:false})).toBe('value "-Infinity" is not boolean');
+    it(`invalid`, () => {
+        expect(Boolean({value:-Infinity, valid:true})).toBe('type is boolean.');
     });
 });
 
-describe('integer',() =>{
+describe('false',() =>{
 
-    it(`positive`, () => {
-        expect(Boolean({value:1, valid:true})).toBe('value "1" is boolean');
-        expect(Boolean({value:1, valid:false})).toBe('value "1" is not boolean');
+    it(`valid`, () => {
+        expect(Boolean({value:false, valid:false})).toBe('type must boolean, actual boolean.');
     });
 
-    it(`boolean`, () => {
-        expect(Boolean({value:-1, valid:true})).toBe('value "-1" is boolean');
-        expect(Boolean({value:-1, valid:false})).toBe('value "-1" is not boolean');
-    });
-});
+    it(`invalid`, () => {
+        expect(Boolean({value:-Infinity, valid:false})).toBe('type must boolean, actual number.');
 
-describe('float',() =>{
-
-    it(`float`, () => {
-        expect(Boolean({value:1.1, valid:true})).toBe('value "1.1" is boolean');
-        expect(Boolean({value:1.1, valid:false})).toBe('value "1.1" is not boolean');
-    });
-
-    it(`float`, () => {
-        expect(Boolean({value:-1.1, valid:true})).toBe('value "-1.1" is boolean');
-        expect(Boolean({value:-1.1, valid:false})).toBe('value "-1.1" is not boolean');
     });
 });
 
-describe('nan',() =>{
-
-    it(`float`, () => {
-        expect(Boolean({value:NaN, valid:true})).toBe('value "NaN" is boolean');
-        expect(Boolean({value:NaN, valid:false})).toBe('value "NaN" is not boolean');
-    });
-
-});

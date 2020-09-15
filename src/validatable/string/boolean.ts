@@ -1,8 +1,8 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import NumberAssert from "../../string/boolean";
+import Assert from "../../assert/string/boolean";
 
-export default function Number(object : Readonly<Value & Validatable>) : string {
+export default function Boolean(object : Readonly<Value & Validatable>) : string {
 
-    return NumberAssert(object.valid, object.value)
+    return Assert(object.valid, object.value)
 }

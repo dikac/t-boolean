@@ -11,6 +11,9 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const boolean_1 = require("./boolean");
     const boolean_2 = require("../validatable/string/boolean");
+    /**
+     * create {@see Boolean} with default message factory
+     */
     function BooleanStandard() {
         return new boolean_1.default(boolean_2.default);
     }

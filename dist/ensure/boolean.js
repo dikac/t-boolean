@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../throwable/boolean", "../assert/boolean"], factory);
+        define(["require", "exports", "../assert/throwable/boolean", "../assert/boolean"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const boolean_1 = require("../throwable/boolean");
+    const boolean_1 = require("../assert/throwable/boolean");
     const boolean_2 = require("../assert/boolean");
     /**
      * Throw exception if given value is no boolean type

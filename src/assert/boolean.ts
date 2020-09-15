@@ -1,4 +1,4 @@
-import ThrowableType from "../throwable/boolean";
+import ThrowableType from "./throwable/boolean";
 import Callback from "@dikac/t-function/assert/callback";
 import BooleanType from "../boolean";
 
