@@ -5,10 +5,10 @@ import ValidatorValidatable from "@dikac/t-validator/validatable/validatable";
 import Validatable from "@dikac/t-validatable/validatable";
 import Value from "@dikac/t-value/value";
 
-export default function Boolean<MessageT, Argument>(
+export default function Boolean<MessageType, Argument>(
     value : Argument,
-    message : (result:Validatable & Value)=>MessageT
-) : Return<any, Argument, boolean, Readonly<ValidatorValidatable<any, MessageT>>> {
+    message : (result:Validatable & Value)=>MessageType
+) : Return<any, Argument, boolean, Readonly<ValidatorValidatable<any, MessageType>>> {
 
-    return <Return<any, Argument, boolean, Readonly<ValidatorValidatable<any, MessageT>>>> Callback(value, NumberGuard, message);
+    return <Return<any, Argument, boolean, Readonly<ValidatorValidatable<any, MessageType>>>> Callback(value, NumberGuard, message);
 }

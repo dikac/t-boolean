@@ -4,10 +4,10 @@
   "description": "Typescript boolean",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-function": "^0.12.3",
-    "@dikac/t-validatable": "^0.18.6",
-    "@dikac/t-validator": "^0.16.0",
-    "@dikac/t-value": "^0.12.4",
+    "@dikac/t-function": "^0.12.5",
+    "@dikac/t-validatable": "^0.18.10",
+    "@dikac/t-validator": "^0.16.7",
+    "@dikac/t-value": "^0.12.8",
     "ts-toolbelt": "^6.15.5"
   },
   "devDependencies": {
