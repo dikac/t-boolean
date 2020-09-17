@@ -1,22 +1,9 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./boolean", "../validatable/string/boolean"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const boolean_1 = require("./boolean");
-    const boolean_2 = require("../validatable/string/boolean");
-    /**
-     * create {@see Boolean} with default message factory
-     */
-    function BooleanStandard() {
-        return new boolean_1.default(boolean_2.default);
-    }
-    exports.default = BooleanStandard;
-});
+import Boolean from "./boolean";
+import BooleanString from "../validatable/string/boolean";
+/**
+ * create {@see Boolean} with default message factory
+ */
+export default function BooleanStandard() {
+    return new Boolean(BooleanString);
+}
 //# sourceMappingURL=boolean-standard.js.map
